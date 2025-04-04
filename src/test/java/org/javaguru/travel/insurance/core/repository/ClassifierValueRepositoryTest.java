@@ -66,8 +66,8 @@ public class ClassifierValueRepositoryTest {
         Optional<ClassifierValue> res = classifierValueRepository.findByClassifierTitleAndIc(
                 classifierTitle, ic);
         assertTrue(res.isPresent());
-        assertEquals(res.get().getIc(), classifierTitle);
-        assertEquals(res.get().getClassifier().getTitle(), ic);
+        assertEquals(res.get().getIc(), ic);
+        assertEquals(res.get().getClassifier().getTitle(), classifierTitle);
     }
 
 
