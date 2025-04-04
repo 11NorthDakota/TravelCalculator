@@ -1,0 +1,152 @@
+1. поле PersonFirstName
+	ввод: Request:
+          {
+            "personFirstName" : null,
+            "personLastName" : "Pupkin",
+            "agreementDateFrom" : "2021-05-25",
+            "agreementDateTo" : "2021-05-29"
+          }
+	ожидаем: Response:
+             {
+               "errors": [
+                 {
+                   "field": "personFirstName",
+                   "message": "Must not be empty!"
+                 }
+               ],
+               "personFirstName": null,
+               "personLastName": null,
+               "agreementDateFrom": null,
+               "agreementDateTo": null,
+               "agreementPrice": null
+             }
+
+2.поле PersonLastName
+	ввод:Request:
+                   {
+                     "personFirstName" : "john",
+                     "personLastName" : null,
+                     "agreementDateFrom" : "2021-05-25",
+                     "agreementDateTo" : "2021-05-29"
+                   }
+	ожидаем:Response:
+                         {
+                           "errors": [
+                             {
+                               "field": "personLastName",
+                               "message": "Must not be empty!"
+                             }
+                           ],
+                           "personFirstName": null,
+                           "personLastName": null,
+                           "agreementDateFrom": null,
+                           "agreementDateTo": null,
+                           "agreementPrice": null
+                         }
+3.поле AgreementDateFrom
+	ввод:Request:
+                            {
+                              "personFirstName" : "john",
+                              "personLastName" : "green",
+                              "agreementDateFrom" : null,
+                              "agreementDateTo" : "2021-05-29"
+                            }
+	ожидаем:{
+                                       "errors": [
+                                         {
+                                           "field": "agreementDateFrom",
+                                           "message": "Must not be empty!"
+                                         }
+                                       ],
+                                       "personFirstName": null,
+                                       "personLastName": null,
+                                       "agreementDateFrom": null,
+                                       "agreementDateTo": null,
+                                       "agreementPrice": null
+                                     }
+4.поле AgreementDateTo
+	ввод:{
+                                       "personFirstName" : "john",
+                                       "personLastName" : "green",
+                                       "agreementDateFrom" : "2021-05-25",
+                                       "agreementDateTo" : null,
+                                     }
+	ожидаем:"errors": [
+                                                     {
+                                                       "field": "agreementDateTo",
+                                                       "message": "Must not be empty!"
+                                                     }
+                                                   ],
+                                                   "personFirstName": null,
+                                                   "personLastName": null,
+                                                   "agreementDateFrom": null,
+                                                   "agreementDateTo": null,
+                                                   "agreementPrice": null
+                                                 }
+5.DateTo раньше DateFrom
+	ввод: Request:
+                                         {
+                                           "personFirstName" : "john",
+                                           "personLastName" : "green",
+                                           "agreementDateFrom" : "2021-05-30",
+                                           "agreementDateTo" : "2021-05-29"
+                                         }
+    ожидаем:"errors": [
+                                         {
+                                           "field": "agreementDateFrom",
+                                           "message": "AgreementDateFrom must be less then agreementDateTo"
+                                         }
+                                                               ],
+                                                               "personFirstName": null,
+                                                               "personLastName": null,
+                                                               "agreementDateFrom": null,
+                                                               "agreementDateTo": null,
+                                                               "agreementPrice": null
+                                                             }
+6.все поля
+	ввод:{
+                                                    "personFirstName" : "john",
+                                                    "personLastName" : "green",
+                                                    "agreementDateFrom" : "2021-05-25",
+                                                    "agreementDateTo" : "2021-05-29"
+                                                  }
+    ожидаем: "errors":[],
+             "personFirstName" : "john",
+             "personLastName": "green",
+             "agreementDateFrom": "2021-05-25",
+             "agreementDateTo": "2021-05-29",
+             "agreementPrice": "4",
+             ""
+                                                             }
+	ввод:"personFirstName": null,
+         "personLastName": null,
+         "agreementDateFrom": null,
+         "agreementDateTo": null,
+         "agreementPrice": null
+	 ожидаем: Response:
+              {
+                "errors": [
+                  {
+                    "field": "personFirstName",
+                    "message": "Must not be empty!"
+                  },
+                  {
+                    "field": "personLastName",
+                    "message": "Must not be empty!"
+                  },
+                  {
+                    "field": "agreementDateFrom",
+                    "message": "Must not be empty!"
+                  },
+                  {
+                    "field": "agreementDateTo",
+                    "message": "Must not be empty!"
+                  }
+                ],
+                "personFirstName": null,
+                "personLastName": null,
+                "agreementDateFrom": null,
+                "agreementDateTo": null,
+                "agreementPrice": null
+              }
+

@@ -1,0 +1,51 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'by.northdakota'  // Группа (используется для публикации артефактов)
+version = '1.0.0'  // Версия проекта
+
+repositories {
+	mavenCentral()  // Указываем репозиторий для зависимостей
+}
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-web:3.4.4')
+
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.18.3'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.3'
+
+	//logs
+	implementation 'ch.qos.logback:logback-core:1.4.14'
+	implementation 'ch.qos.logback:logback-classic:1.4.14'
+	implementation 'org.slf4j:slf4j-api:2.0.17'
+
+	//db
+	implementation("org.springframework.boot:spring-boot-starter-jdbc:3.4.4")
+
+	implementation("org.liquibase:liquibase-core:4.31.1")
+
+	implementation("org.postgresql:postgresql:42.7.5")
+
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok:1.18.36'
+	annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+	//test
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test:3.4.4')
+	testCompileOnly 'org.projectlombok:lombok:1.18.36'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+	test {
+		enabled = true
+		useJUnitPlatform()
+	}
+
+}
+compileJava {
+	options.encoding = "UTF-8"
+}
+
+compileTestJava {
+	options.encoding = "UTF-8"
+}

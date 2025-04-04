@@ -1,0 +1,37 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_7",
+      "description": "Field personFirstName must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_8",
+      "description": "Field personLastName must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_2",
+      "description": "Field agreementDateFrom must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_4",
+      "description": "Field agreementDateTo must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_5",
+      "description": "Field agreementDateFrom must be in the future!"
+    },
+    {
+      "errorCode": "ERROR_CODE_9",
+      "description": "AgreementDateTo must be after current date"
+    },
+    {
+      "errorCode": "ERROR_CODE_6",
+      "description": "At least 1 risk must be selected"
+    }
+  ],
+  "personFirstName": null,
+  "personLastName": null,
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "agreementPrice": null
+}

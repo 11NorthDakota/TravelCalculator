@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_4",
+      "description": "Field agreementDateTo must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_9",
+      "description": "AgreementDateTo must be after current date"
+    }
+  ],
+  "personFirstName": null,
+  "personLastName": null,
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "agreementPrice": null
+}

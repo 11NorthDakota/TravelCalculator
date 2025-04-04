@@ -1,0 +1,37 @@
+*.*~
+#java specific
+*.class
+*.jar
+# without gradle-wrapper.jar our build will fail
+!gradle/wrapper/gradle-wrapper.jar
+
+#log specific
+*.log
+
+#Mac
+**/.DS_Store
+
+### Gradle ###
+../стажировка-работа/.gradle
+**/build/
+**/logs/
+**/out/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.gradle
+
+### IntelliJ IDEA ###
+**/.idea
+*.iws
+*.iml
+*.ipr
+
+
+settings.gradle
+/student_artem_ivanov/src/main/resources/application.yml

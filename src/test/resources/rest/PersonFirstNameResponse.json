@@ -1,0 +1,14 @@
+{
+  "personFirstName": null,
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_7",
+      "description": "Field personFirstName must not be empty!"
+    }
+  ],
+
+  "personLastName": null,
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "agreementPrice": null
+}

@@ -1,0 +1,11 @@
+myapp:
+    logDir: "C:/Logs"
+
+spring:
+  liquibase:
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Artem2003
+    driver-class-name: org.postgresql.Driver
